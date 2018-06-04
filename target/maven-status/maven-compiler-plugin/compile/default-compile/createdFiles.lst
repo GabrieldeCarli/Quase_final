@@ -6,3 +6,4 @@ Controller\InsertServlet.class
 Model\Evento.class
 Controller\logar.class
 Model\EventoDAO.class
+.netbeans_automatic_build

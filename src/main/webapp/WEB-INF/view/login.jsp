@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,15 +14,18 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
+        <fmt:setBundle basename = "localidades.Messages" var = "lang"/>
         <fieldset>
-            <legend>Login</legend>
+            <legend> <fmt:message key = "login" bundle = "${lang}"/> </legend>
+
             <form action="logar" method="post">
-                Email <input type="email" name="email" value=""/>
+                <fmt:message key = "email" bundle = "${lang}"/><input type="email" name="email" value=""/>
                 <c:if test="${semEmail == true}">
                     <h3 style="color:red"> Digite o email</h3>
                 </c:if>
 
-                <p>Senha <input type="password" name="senha" value=""/></p>
+                <p><fmt:message key = "senha" bundle = "${lang}"/> <input type="password" name="senha" value=""/></p>
                 <c:if test="${semSenha == true}">
                     <h3 style="color:red"> Digite a senha</h3>
                 </c:if>

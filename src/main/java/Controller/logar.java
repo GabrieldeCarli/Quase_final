@@ -3,6 +3,7 @@ package Controller;
 import Model.Usuario;
 import Model.UsuarioDAO;
 import java.io.IOException;
+import java.util.Locale;
 //import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,7 +41,8 @@ public class logar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        Locale locale = request.getLocale();        
+        System.out.println(locale);
         System.out.println("Passei: " + request.getParameter("loginIncorreto"));
         if (request.getParameter("loginIncorreto") != null) { //se o login estiver incorreto
 
